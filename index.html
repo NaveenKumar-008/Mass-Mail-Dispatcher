@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mass-Mail Dispatcher</title>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Mass-Mail Dispatcher</h1>
+    <p id="heading"></p>
+    <form id="mail-form">
+        <label for="senderEmail">From :</label>
+        <input type="email" id="senderEmail" name="senderEmail" required>
+        
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required>
+        
+        <label for="csvFile">CSV File:</label>
+        <input type="file" id="csvFile" name="csvFile" accept=".csv" required>
+        
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        
+        <button type="button" onclick="sendEmails()">Send Emails</button>
+    </form>
+    
+    <div>
+        <p>Valid Emails: <span id="validEmailCount"></span></p>
+        <div id="validEmails"></div>
+        
+        <p>Invalid Emails: <span id="invalidEmailCount"></span></p>
+        <div id="invalidEmails"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
